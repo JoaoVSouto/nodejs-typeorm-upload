@@ -17,7 +17,7 @@ class TransactionsRepository extends Repository<Transaction> {
       .filter(transaction => transaction.type === 'income')
       .reduce(
         (totalIncome, currentTransaction) =>
-          totalIncome + currentTransaction.value,
+          totalIncome + Number(currentTransaction.value),
         0,
       );
 
@@ -25,7 +25,7 @@ class TransactionsRepository extends Repository<Transaction> {
       .filter(transaction => transaction.type === 'outcome')
       .reduce(
         (totalOutcome, currentTransaction) =>
-          totalOutcome + currentTransaction.value,
+          totalOutcome + Number(currentTransaction.value),
         0,
       );
 

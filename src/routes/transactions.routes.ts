@@ -2,13 +2,18 @@ import { Router } from 'express';
 
 // import TransactionsRepository from '../repositories/TransactionsRepository';
 import CreateTransactionService from '../services/CreateTransactionService';
+import ShowTransactionsService from '../services/ShowTransactionsService';
 // import DeleteTransactionService from '../services/DeleteTransactionService';
 // import ImportTransactionsService from '../services/ImportTransactionsService';
 
 const transactionsRouter = Router();
 
 transactionsRouter.get('/', async (request, response) => {
-  // TODO
+  const showTransactions = new ShowTransactionsService();
+
+  const { transactions, balance } = await showTransactions.execute();
+
+  return response.json({ transactions, balance });
 });
 
 transactionsRouter.post('/', async (request, response) => {
