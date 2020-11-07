@@ -476,6 +476,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/bluebird@^3.5.33":
+  version "3.5.33"
+  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.33.tgz#d79c020f283bd50bd76101d7d300313c107325fc"
+  integrity sha512-ndEo1xvnYeHxm7I/5sF6tBvnsA4Tdi3zj1keRKRs12SP+2ye2A27NDJ1B6PqkfMbGAcT+mqQVqbZRIrhfOp5PQ==
+
 "@types/body-parser@*":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.0.tgz#0685b3c47eb3006ffed117cdd55164b61f80538f"
@@ -500,13 +505,6 @@
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/cookiejar/-/cookiejar-2.1.1.tgz#90b68446364baf9efd8e8349bb36bd3852b75b80"
   integrity sha512-aRnpPa7ysx3aNW60hTiCtLHlQaIFsXFCgQlpakNgDNVFzbtusSY8PwjAQgRWfSk0ekNoBjO51eQRB6upA9uuyw==
-
-"@types/csv-parse@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@types/csv-parse/-/csv-parse-1.2.2.tgz#713486235759d615dc8e6a6a979170ada76701d5"
-  integrity sha512-k33tLtRKTQxf7hQfMlkWoS2TQYsnpk1ibZN+rzbuCkeBs8m23nHTeDTF1wb/e7/MSLdtgCzqu3oM1I101kd6yw==
-  dependencies:
-    csv-parse "*"
 
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
@@ -591,10 +589,10 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-2.0.1.tgz#dc488842312a7f075149312905b5e3c0b054c79d"
   integrity sha512-FwI9gX75FgVBJ7ywgnq/P7tw+/o1GUbtP0KzbtusLigAOgIgNISRK0ZPl4qertvXSIE8YbsVJueQ90cDt9YYyw==
 
-"@types/multer@^1.4.2":
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/@types/multer/-/multer-1.4.2.tgz#f73e9eab7d8e0ff2842630e7968b88336cbb7e1c"
-  integrity sha512-pVcPwuC0FbVcLhopJHx8Ro3WSXjvVvEpJMfy+DFAL/3DwNYAQH+hf/Vq+PqoS5kM4mng7L/4upzXhP/12yWh4w==
+"@types/multer@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@types/multer/-/multer-1.4.4.tgz#bb5d9abc410da82726ceca74008bb81813349a88"
+  integrity sha512-wdfkiKBBEMTODNbuF3J+qDDSqJxt50yB9pgDiTcFew7f97Gcc7/sM4HR66ofGgpJPOALWOqKAch4gPyqEXSkeQ==
   dependencies:
     "@types/express" "*"
 
@@ -1031,6 +1029,11 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bluebird@^3.5.1, bluebird@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
+  integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
+
 body-parser@1.19.0:
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
@@ -1442,10 +1445,14 @@ cssstyle@^2.0.0:
   dependencies:
     cssom "~0.3.6"
 
-csv-parse@*, csv-parse@^4.8.8:
-  version "4.8.8"
-  resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-4.8.8.tgz#0acbc4598c1f28652c4250599108096b3a0a68ae"
-  integrity sha512-Kv3Ilz2GV58dOoHBXRCTF8ijxlLjl80bG3d67XPI6DNqffb3AnbPbKr/WvCUMJq5V0AZYi6sukOaOQAVpfuVbg==
+csvtojson@^2.0.10:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/csvtojson/-/csvtojson-2.0.10.tgz#11e7242cc630da54efce7958a45f443210357574"
+  integrity sha512-lUWFxGKyhraKCW8Qghz6Z0f2l/PqB1W3AO0HKJzGIQ5JRSlR651ekJDiGJbBT4sRNNv5ddnSGVEnsxP9XRCVpQ==
+  dependencies:
+    bluebird "^3.5.1"
+    lodash "^4.17.3"
+    strip-bom "^2.0.0"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -3415,6 +3422,11 @@ lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+
+lodash@^4.17.3:
+  version "4.17.20"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
+  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
 lolex@^5.0.0:
   version "5.1.2"

@@ -11,6 +11,7 @@ interface Request {
   value: number;
   type: 'income' | 'outcome';
   category: string;
+  validateOutcome?: boolean;
 }
 
 class CreateTransactionService {
@@ -19,10 +20,11 @@ class CreateTransactionService {
     value,
     type,
     category: categoryTitle,
+    validateOutcome = true,
   }: Request): Promise<Transaction> {
     const transactionsRepository = getCustomRepository(TransactionsRepository);
 
-    if (type === 'outcome') {
+    if (validateOutcome && type === 'outcome') {
       const { total } = await transactionsRepository.getBalance();
 
       if (total < value) {
