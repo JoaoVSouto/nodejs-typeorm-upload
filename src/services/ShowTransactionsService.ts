@@ -16,7 +16,9 @@ class ShowTransactionsService {
   public async execute(): Promise<Response> {
     const transactionsRepository = getCustomRepository(TransactionsRepository);
 
-    const transactions = await transactionsRepository.find();
+    const transactions = await transactionsRepository.find({
+      relations: ['category'],
+    });
     const balance = await transactionsRepository.getBalance();
 
     return { transactions, balance };
